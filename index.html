@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:700i" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Ride Forecaster</title>
+</head>
+<body>
+  <div class="main" aria-label="Content container" name="container" role="main">
+    <div class="header" id="titleText" aria-label="Application header" aria-level="1" name="header" role="heading">
+      <h1>Find trails and see real-time weather data!</h1>
+      <h2>Select your preferences below and hit go!</h2>
+    </div>
+  <form>
+    <fieldset class="fieldBox stackable" id="searchRadius" name="searchRadius">
+      <label>Search Radius</label>
+        <select class="dropDown" id="userSearchRadius" aria-label="Search radius" type="select" role="menu">
+          <option value="5" role="menuitem">5 Miles</option> 
+          <option value="10" role="menuitem">10 Miles</option>
+          <option value="25" role="menuitem" selected>25 Miles</option>
+          <option value="50" role="menuitem">50 Miles</option>
+        </select>
+    </fieldset>
+    <fieldset class="fieldBox stackable" id="trailLength">
+      <label>Trail Length</label>
+        <select class="dropDown" id="userTrailLength" aria-label="Trail length" type="select" role="menu">
+          <option value="5" role="menuitem" selected>5+ Miles</option> 
+          <option value="10" role="menuitem">10+ Miles</option>
+          <option value="25" role="menuitem">25+ Miles</option>
+          <option value="50" role="menuitem">50+ Miles</option>
+        </select>
+    </fieldset>
+    <fieldset class="fieldBox stackable" id="trailRating">
+      <label>Trail Rating</label>
+        <select class="dropDown" id="userRating" aria-label="Trail rating" type="select" role="menu">
+          <option value="1" role="menuitem">0 Stars</option>
+          <option value="2" role="menuitem" selected>1 Star</option>
+          <option value="2" role="menuitem">2 Stars</option>
+          <option value="3" role="menuitem">3 Stars</option>
+          <option value="4" role="menuitem">4 Stars</option>
+          <option value="5" role="menuitem">5 Stars</option>
+        </select>
+    </fieldset>
+    <fieldset class="fieldBox stackable" id="searchLocation" role="textbox">
+      <label>Location</label>
+        <input name="searchTerms" aria-label="search-here" type="text" class="searchTerms" placeholder="Search here" required=""><br class="mobile"/>
+        <button aria-label="submit-button" id="js-location-submit-button" type="submit">Go!</button>
+    </fieldset>
+  </form>
+    <div class="errorMessage" aria-label="Error message" name="errorMessage"></div>
+    <div id="js-google_map" aria-labelledby="Google map display" name="googleMap"></div>
+  </div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrlS-LQnc7fbdIRMZD5ctvGlYzQo3GyQU"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
